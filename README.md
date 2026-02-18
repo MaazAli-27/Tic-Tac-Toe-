@@ -1,46 +1,28 @@
-**🎮 Tic Tac Toe – Neon Dark Theme**
+🎮 Neon Glow Tic-Tac-Toe
+A modern, immersive web-based Tic-Tac-Toe game featuring a sleek dark-themed UI, neon glow effects, and dynamic spatial audio for two players.
 
-A modern Tic Tac Toe web game built using HTML, CSS, and JavaScript.
-This project features a dark neon UI, smooth animations, and sound effects for a more interactive experience.
+(Note: Replace the image above with your actual screenshot path if different)
 
-**✨ Features**
-🎲 Two-player mode (Player X vs Player O)
-🎨 Modern dark purple neon design
-💫 Smooth hover and click animations
-🔊 Sound effects for:
-Player move, Player win, Draw
+✨ Features
+Immersive UI: A deep purple "Glassmorphism" design with neon cyan (Player X) and neon magenta (Player O) accents.
 
-🏆 Winning cells highlighted with glow animation
-🔁 Restart button to reset the game
-📱 Responsive layout for different screen sizes
+Dynamic Audio Engine:
 
-**🧠 Game Logic**
-The game uses a 3x3 grid.
-Players take turns placing X and O.
-The game checks all 8 possible winning combinations:
-3 rows
-3 columns
-2 diagonals
+Distinct sound effects for Player 1 (X) and Player 2 (O) moves.
 
-If a player matches any winning combination, the game:
-Displays the winning message
-Highlights winning cells
-Plays the winner sound
-If all cells are filled and no winner is found, the game declares a draw.
+Unique victory anthems specific to the winning player.
 
-**🔊 Sound Effects**
+Dedicated sound effect for a Draw/Tie game.
 
-The game includes different sound effects for better user interaction:
-player1_move.mp3 – when Player X makes a move
-player2_move.mp3 – when Player O makes a move
-player1_win.mp3 – when Player X wins
-player2_win.mp3 – when Player O wins
-draw.mp3 – when the game ends in a draw
-All sounds reset properly when the game restarts.
+Smart Audio Handling: Sounds reset instantly on rapid clicks and stop immediately upon restarting the game.
 
-**🛠️ Technologies Used**
-HTML5 – Structure
-CSS3 – Styling, animations, neon effects
-Vanilla JavaScript (ES6) – Game logic and sound handling
+Responsive Design: Fully fluid layout that adjusts from desktop monitors down to mobile screens.
 
-No external libraries or frameworks were used.# Tic-Tac-Toe-
+Interactive Animations: Smooth pop-in animations for marks and pulsing glow effects for winning lines.
+
+🛠️ Technologies Used
+HTML5: Semantic structure.
+
+CSS3: Flexbox/Grid layout, CSS Variables, Animations, and Media Queries.
+
+JavaScript (ES6+): DOM manipulation, Game State logic, and Audio control.
