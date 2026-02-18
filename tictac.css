@@ -1,0 +1,190 @@
+:root {
+    /* Dark Purple Theme Palette */
+    --bg-color: #1a1025;          /* Deep dark purple background */
+    --container-bg: #2b1d3d;      /* Slightly lighter card bg */
+    --cell-bg: #3b2a52;           /* Cell background */
+    --cell-hover: #4e366e;        /* Lighter purple for hover */
+    --text-color: #e2d9f3;        /* Light lavender text */
+    
+    --x-color: #00f2ff;           /* Neon Cyan for X */
+    --o-color: #ff00ff;           /* Neon Magenta for O */
+    --win-color: #00ff9d;         /* Neon Green for Winner */
+    
+    --cell-size: 100px;
+    --mark-size: 60px;
+    --glow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 50%, #2a1b3d 0%, #1a1025 100%);
+    color: var(--text-color);
+}
+
+.container {
+    text-align: center;
+    background: var(--container-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 
+                0 0 30px rgba(138, 43, 226, 0.2); /* Purple glow */
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 3rem;
+    background: linear-gradient(to right, var(--x-color), var(--o-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin-bottom: 0.5rem;
+}
+
+.status {
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    height: 1.5em;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(226, 217, 243, 0.3);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 0 auto 2.5rem;
+    max-width: 340px;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: var(--cell-bg);
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--mark-size);
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    :root {
+        --cell-size: 80px;
+        --mark-size: 48px;
+    }
+}
+
+/* Hover Effects */
+.cell:hover:not(.x):not(.o) {
+    background-color: var(--cell-hover);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3), var(--glow);
+    z-index: 10;
+}
+
+/* Click/Active Effect */
+.cell:active:not(.x):not(.o) {
+    transform: scale(0.95);
+}
+
+.cell.x {
+    color: var(--x-color);
+    cursor: default;
+    text-shadow: 0 0 15px var(--x-color);
+}
+
+.cell.o {
+    color: var(--o-color);
+    cursor: default;
+    text-shadow: 0 0 15px var(--o-color);
+}
+
+.cell.winner {
+    background-color: rgba(0, 255, 157, 0.2); /* Transparent Green */
+    color: var(--win-color);
+    box-shadow: 0 0 30px var(--win-color);
+    border: 2px solid var(--win-color);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px var(--win-color); }
+    50% { box-shadow: 0 0 30px var(--win-color), 0 0 50px var(--win-color); }
+    100% { box-shadow: 0 0 10px var(--win-color); }
+}
+
+.restart-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 20px rgba(118, 75, 162, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.restart-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(118, 75, 162, 0.6);
+}
+
+.restart-btn:hover::after {
+    left: 100%;
+}
+
+.restart-btn:active {
+    transform: translateY(1px);
+}
+
+/* Animation for marks */
+@keyframes popIn {
+    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+    70% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.cell.x::before, .cell.o::before {
+    content: attr(data-mark);
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
