@@ -1,28 +1,27 @@
-🎮 Neon Glow Tic-Tac-Toe
-A modern, immersive web-based Tic-Tac-Toe game featuring a sleek dark-themed UI, neon glow effects, and dynamic spatial audio for two players.
+# 🎮 Neon Tic-Tac-Toe
 
-(Note: Replace the image above with your actual screenshot path if different)
+A modern, immersive web-based Tic-Tac-Toe game featuring a sleek dark-themed UI, neon glow effects, and a dynamic spatial audio engine with specific victory anthems for each player.
 
-✨ Features
-Immersive UI: A deep purple "Glassmorphism" design with neon cyan (Player X) and neon magenta (Player O) accents.
+<img width="651" height="840" alt="image" src="https://github.com/user-attachments/assets/cce92195-f1e1-4f27-8c9f-4139cc4fe4af" />
 
-Dynamic Audio Engine:
 
-Distinct sound effects for Player 1 (X) and Player 2 (O) moves.
+---
 
-Unique victory anthems specific to the winning player.
+## ✨ Key Features
 
-Dedicated sound effect for a Draw/Tie game.
+* **🎨 Immersive Neon UI:** A deep purple "Glassmorphism" design with neon cyan (Player X) and neon magenta (Player O) accents.
+* **🔊 Dynamic Audio Engine:**
+    * **Individual Victory Tracks:** Unique victory anthems that trigger specifically for Player 1 or Player 2.
+    * **Distinct Move Sounds:** Separate audio cues for 'X' and 'O' placement.
+    * **Draw Detection:** A specific sound effect for tied games.
+    * **Smart Audio Handling:** Logic to reset audio time on rapid clicks and immediately pause playback upon restart.
+* **📱 Fully Responsive:** Fluid CSS Grid layout that adapts from desktop monitors to mobile devices.
+* **✨ Interactive Animations:** Smooth CSS pop-in animations for marks and pulsing glow effects for winning lines.
 
-Smart Audio Handling: Sounds reset instantly on rapid clicks and stop immediately upon restarting the game.
+---
 
-Responsive Design: Fully fluid layout that adjusts from desktop monitors down to mobile screens.
+## 🛠️ Technologies Used
 
-Interactive Animations: Smooth pop-in animations for marks and pulsing glow effects for winning lines.
-
-🛠️ Technologies Used
-HTML5: Semantic structure.
-
-CSS3: Flexbox/Grid layout, CSS Variables, Animations, and Media Queries.
-
-JavaScript (ES6+): DOM manipulation, Game State logic, and Audio control.
+* **HTML5:** Semantic structure and DOM layout.
+* **CSS3:** CSS Variables, Flexbox, Grid, and Keyframe animations.
+* **JavaScript:** Game logic, DOM manipulation, and HTML5 Audio API control.
